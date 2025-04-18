@@ -91,14 +91,3 @@ main.py       # Game entry point and main loop
 utils.py      # Helper functions (random generation, input parsing, etc.)
 README.md     # This file
 ```
-
-## Contributing
-Contributions are welcome! Feel free to:
-- Report issues or bugs
-- Suggest new features or improvements
-- Submit pull requests
-
-Please follow the existing code style and write tests where appropriate.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
