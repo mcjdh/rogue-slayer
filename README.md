@@ -39,18 +39,6 @@ The game uses a Key-Driven Procedural Dungeon Generation system: each Dungeon Ke
 - Python 3.7 or higher
 - Windows, macOS, or Linux
 
-### Installation
-1. Clone this repository:
-   ```powershell
-   git clone https://github.com/yourusername/rogue-slayer.git
-   cd rogue-slayer
-   ```
-2. (Optional) Create and activate a virtual environment:
-   ```powershell
-   python -m venv venv
-   .\venv\Scripts\Activate
-   ```
-
 ### Running the Game
 ```powershell
 python main.py
