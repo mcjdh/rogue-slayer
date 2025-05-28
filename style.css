@@ -1,0 +1,400 @@
+/* Base styling */
+:root {
+    --primary-color: #8c52ff;
+    --secondary-color: #5c3d99;
+    --highlight-color: #d5b8ff;
+    --dark-bg: #121212;
+    --medium-bg: #1e1e1e;
+    --light-bg: #2a2a2a;
+    --text-color: #ffffff;
+    --danger-color: #ff4d4d;
+    --success-color: #4dff4d;
+    --warning-color: #ffda4d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Game container */
+.game-container {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* HUD */
+.hud {
+    background-color: var(--medium-bg);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hud-item {
+    margin: 0.3rem 0;
+    width: 50%;
+    padding: 0 5px;
+}
+
+/* Game screens */
+.game-screen {
+    background-color: var(--medium-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-screen h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3rem;
+}
+
+.game-screen p {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 15px;
+    margin: 5px 0;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: var(--medium-bg);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-bg);
+}
+
+.btn-menu {
+    background-color: var(--light-bg);
+    padding: 15px;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-menu:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-combat {
+    background-color: var(--light-bg);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.btn-combat[data-action="attack"] {
+    background-color: var(--danger-color);
+}
+
+.btn-combat[data-action="use-consumable"] {
+    background-color: var(--warning-color);
+    color: black;
+}
+
+.btn-combat[data-action="special-ability"] {
+    background-color: var(--primary-color);
+}
+
+.btn-combat[data-action="flee"] {
+    background-color: var(--light-bg);
+}
+
+/* Menu options */
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Combat screen */
+.combat-enemy-info {
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.combat-log {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--light-bg);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.combat-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Inventory styles */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inventory-item {
+    background-color: var(--light-bg);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inventory-item:hover {
+    background-color: var(--primary-color);
+}
+
+/* Shop styles */
+.shop-tabs {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.shop-tab {
+    background-color: var(--light-bg);
+    padding: 10px 15px;
+    flex: 1;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.shop-tab.active {
+    background-color: var(--primary-color);
+}
+
+.shop-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.shop-item {
+    background-color: var(--light-bg);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.shop-item:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Achievements */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.achievement {
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.achievement-locked {
+    opacity: 0.5;
+}
+
+.achievement-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Dungeon selection */
+.keys-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.key-item {
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.key-item:hover {
+    background-color: var(--primary-color);
+}
+
+/* Message box */
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--medium-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    max-width: 90%;
+    width: 350px;
+    text-align: center;
+}
+
+.message-box p {
+    margin-bottom: 20px;
+}
+
+/* Utility classes */
+.text-danger {
+    color: var(--danger-color);
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-warning {
+    color: var(--warning-color);
+}
+
+.text-highlight {
+    color: var(--highlight-color);
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+    .game-container {
+        max-width: 768px;
+        padding: 2rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .hud-item {
+        width: auto;
+    }
+
+    .inventory-grid,
+    .shop-items,
+    .keys-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .combat-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 1s infinite;
+}
