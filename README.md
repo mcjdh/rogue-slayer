@@ -1,6 +1,6 @@
 # Rogue Slayer
 
-**Rogue Slayer** is a text-based RPG built in Python where you explore randomly generated dungeons, battle bosses, and level up your hero to face the Dark Overlord.
+**Rogue Slayer** is a roguelike RPG available as both a terminal-based Python game and a web-based JavaScript game where you explore randomly generated dungeons, battle bosses, and level up your hero to face the Dark Overlord.
 
 The game uses a Key-Driven Procedural Dungeon Generation system: each Dungeon Key unlocks a themed dungeon instance that is algorithmically generated with unique layouts, enemy placements, and loot on every run—ensuring no two dungeons are ever the same.
 
@@ -35,14 +35,37 @@ The game uses a Key-Driven Procedural Dungeon Generation system: each Dungeon Ke
 
 ## Getting Started
 
-### Prerequisites
+### Terminal Version
+
+#### Prerequisites
 - Python 3.7 or higher
 - Windows, macOS, or Linux
 
-### Running the Game
+#### Running the Terminal Game
 ```powershell
 python main.py
 ```
+
+### Web Version
+
+#### Prerequisites
+- Any modern web browser (Chrome, Firefox, Safari, Edge)
+- Supports both desktop and mobile devices
+
+#### Running the Web Game
+1. Open the `index.html` file in a web browser
+2. Or serve the files using a local web server:
+   ```
+   # Python 3 simple HTTP server
+   python -m http.server
+   ```
+   Then open `http://localhost:8000` in your browser
+
+#### Web Version Features
+- Responsive design for mobile and desktop
+- Tap/click interface for easy interaction
+- Game progress saved in browser localStorage
+- Modern UI with improved visuals
 
 ## Gameplay Overview
 
@@ -85,9 +108,18 @@ Once you’ve collected all required Pages, use the Final Key to open the rift g
 
 ## Project Structure
 ```
-entities.py   # Defines characters, mobs, bosses, and items
-game.py       # Core game logic, combat, progression, and menus
-main.py       # Game entry point and main loop
-utils.py      # Helper functions (random generation, input parsing, etc.)
+# Terminal Version
+entities.py   # Defines characters, mobs, bosses, and items in Python
+game.py       # Core game logic, combat, progression, and menus in Python
+main.py       # Game entry point and main loop for terminal version
+utils.py      # Helper functions for terminal version
+
+# Web Version
+index.html    # Main HTML file for the web game
+style.css     # CSS styling for responsive UI
+entities.js   # JavaScript classes for game entities
+game.js       # Game logic and state management in JavaScript
+ui.js         # UI rendering and input handling
+
 README.md     # This file
 ```
