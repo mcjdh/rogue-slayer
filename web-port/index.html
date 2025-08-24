@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue Slayer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header>
+            <h1>Rogue Slayer</h1>
+        </header>
+
+        <!-- HUD -->
+        <div id="hud" class="hud">
+            <!-- HUD content will be dynamically inserted here -->
+        </div>
+
+        <!-- Game screens - only one will be visible at a time -->
+        <div id="game-screens">
+            <!-- Start screen -->
+            <div id="start-screen" class="game-screen">
+                <h2>Welcome to Rogue Slayer! 🗡️</h2>
+                <p>Embark on an epic quest through mystical dungeons and treacherous landscapes.</p>
+                <p>Face formidable foes, collect legendary items, and restore peace to the land.</p>
+                <button id="start-button" class="btn-primary">Begin Adventure</button>
+            </div>
+
+            <!-- Main menu screen -->
+            <div id="main-menu-screen" class="game-screen hidden">
+                <h2>Main Menu 🗺️</h2>
+                <div class="menu-options">
+                    <button class="btn-menu" data-action="explore-dungeon">Explore Dungeon 🕳️</button>
+                    <button class="btn-menu" data-action="explore-overworld">Explore Overworld 🏞️</button>
+                    <button class="btn-menu" data-action="rest">Rest to Recover HP 🛌</button>
+                    <button class="btn-menu" data-action="shop">Visit Shop 🛒</button>
+                    <button class="btn-menu" data-action="inventory">View Inventory 📦</button>
+                    <button class="btn-menu" data-action="achievements">View Achievements 🏆</button>
+                    <button class="btn-menu" data-action="exit">Exit Game ❌</button>
+                </div>
+            </div>
+
+            <!-- Combat screen -->
+            <div id="combat-screen" class="game-screen hidden">
+                <div class="combat-enemy-info">
+                    <!-- Enemy info will go here -->
+                </div>
+                <div class="combat-log">
+                    <!-- Combat messages will be logged here -->
+                </div>
+                <div class="combat-actions">
+                    <button class="btn-combat" data-action="attack">Attack ⚔️</button>
+                    <button class="btn-combat" data-action="use-consumable">Use Consumable 🔥</button>
+                    <button class="btn-combat" data-action="special-ability">Use Special Ability 🌟</button>
+                    <button class="btn-combat" data-action="flee">Flee 🏃‍♂️</button>
+                </div>
+            </div>
+
+            <!-- Inventory screen -->
+            <div id="inventory-screen" class="game-screen hidden">
+                <h2>Inventory 📦</h2>
+                <div id="inventory-items" class="inventory-grid">
+                    <!-- Inventory items will be inserted here -->
+                </div>
+                <div class="inventory-actions">
+                    <button class="btn-secondary" data-action="back">Back to Menu</button>
+                </div>
+            </div>
+
+            <!-- Shop screen -->
+            <div id="shop-screen" class="game-screen hidden">
+                <h2>Shop 🛒</h2>
+                <div class="shop-tabs">
+                    <button class="shop-tab active" data-tab="buy">Buy Items</button>
+                    <button class="shop-tab" data-tab="sell">Sell Keys</button>
+                </div>
+                <div id="shop-inventory" class="shop-items">
+                    <!-- Shop items will be inserted here -->
+                </div>
+                <div class="shop-actions">
+                    <button class="btn-secondary" data-action="back-to-menu">Back to Menu</button>
+                </div>
+            </div>
+
+            <!-- Achievements screen -->
+            <div id="achievements-screen" class="game-screen hidden">
+                <h2>Achievements 🏆</h2>
+                <div id="achievements-list" class="achievements-grid">
+                    <!-- Achievements will be inserted here -->
+                </div>
+                <div class="achievement-actions">
+                    <button class="btn-secondary" data-action="back-to-menu">Back to Menu</button>
+                </div>
+            </div>
+
+            <!-- Dungeon selection screen -->
+            <div id="dungeon-select-screen" class="game-screen hidden">
+                <h2>Select Dungeon 🔑</h2>
+                <div id="available-keys" class="keys-grid">
+                    <!-- Available keys will be shown here -->
+                </div>
+                <div class="dungeon-select-actions">
+                    <button class="btn-secondary" data-action="cancel-dungeon">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Game over screen -->
+            <div id="game-over-screen" class="game-screen hidden">
+                <h2>Game Over 💀</h2>
+                <p>You have been slain. 😔</p>
+                <button class="btn-primary" data-action="restart">Restart Game</button>
+            </div>
+
+            <!-- Victory screen -->
+            <div id="victory-screen" class="game-screen hidden">
+                <h2>Victory! 🌟</h2>
+                <p>After an arduous battle, you have defeated the Dark Overlord.</p>
+                <p>The land begins to heal as peace is restored.</p>
+                <p>Congratulations! You have completed Rogue Slayer!</p>
+                <button class="btn-primary" data-action="restart">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Message box for notifications -->
+        <div id="message-box" class="message-box hidden">
+            <p id="message-text"></p>
+            <button id="message-confirm" class="btn-primary">Continue</button>
+        </div>
+    </div>
+
+    <!-- Game scripts -->
+    <script src="entities.js"></script>
+    <script src="ui.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
